@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Keys-app</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <color name="azul_escuro">#435e6f</color>
+</resources>
