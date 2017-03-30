@@ -1,5 +1,7 @@
 package ifpb.edu.br.keys_app.activities;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,6 +16,7 @@ import ifpb.edu.br.keys_app.R;
 public class LoginActivity extends AppCompatActivity {
     EditText matricula, senha;
     Button login;
+    ProgressDialog progress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,10 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+                progress = new ProgressDialog(LoginActivity.this);
+                progress.setTitle("enviando...");
+                progress.show();
+
                 if(matricula.getText().length() == 0){
                     matricula.setError("Campo vazio");
                 }else if (matricula.getText().length() < 11){
@@ -39,6 +46,14 @@ public class LoginActivity extends AppCompatActivity {
                 }else if (senha.getText().length() < 3){
                     senha.setError("Minímo 3 caracteres");
                 }
+
+                progress.dismiss();
+
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+
+
 
                 // aqui acho que fica a parte de verificar se ta cadastrado
             }
