@@ -10,24 +10,34 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity android:name=".activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".activities.LoginActivity"
             android:label="@string/title_activity_login"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.MainActivity"
             android:label="Main"
             android:theme="@style/AppTheme.NoActionBar" />
-
+        <activity
+            android:name=".activities.OcupadasActivity"
+            android:label="@string/title_activity_ocupadas"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.LivresActivity"
+            android:label="@string/title_activity_livres"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.LocaisActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_locais"
+            android:theme="@style/FullscreenTheme"></activity>
     </application>
 
 </manifest>

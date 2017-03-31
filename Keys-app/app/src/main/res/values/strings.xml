@@ -4,4 +4,10 @@
     <color name="azul_escuro">#435e6f</color>
     <color name="branco">#ffffff</color>
     <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_ocupadas">OcupadasActivity</string>
+    <string name="title_activity_livres">LivresActivity</string>
+
+    <string name="title_activity_locais">LocaisActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>
