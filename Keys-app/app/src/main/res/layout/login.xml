@@ -48,9 +48,9 @@
                     android:drawableLeft="@drawable/icon_user"
                     android:drawableTint="#000000"
                     android:singleLine="true"
-                    android:hint="  MATRICULA"
-                    android:inputType="number"
-                    android:id="@+id/et_matricula" />
+                    android:hint="  NOME"
+                    android:inputType="text"
+                    android:id="@+id/et_nome" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -64,9 +64,9 @@
                     android:singleLine="true"
                     android:drawableLeft="@drawable/lock"
                     android:drawableTint="#000000"
-                    android:hint="  SENHA"
+                    android:hint="  MATRICULA"
                     android:inputType="numberPassword"
-                    android:id="@+id/et_senha" />
+                    android:id="@+id/et_matricula" />
             </android.support.design.widget.TextInputLayout>
 
             <TextView

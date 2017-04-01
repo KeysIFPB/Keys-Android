@@ -2,7 +2,6 @@ package ifpb.edu.br.keys_app.activities;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.media.Image;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,18 +12,12 @@ import android.widget.ListView;
 import java.util.List;
 
 import ifpb.edu.br.keys_app.R;
-import ifpb.edu.br.keys_app.models.Local;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import ifpb.edu.br.keys_app.R;
 import ifpb.edu.br.keys_app.models.Sine;
 import ifpb.edu.br.keys_app.network.ServerConnection;
 import retrofit2.Call;

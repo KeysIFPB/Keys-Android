@@ -48,5 +48,23 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="12dp" />
 
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/marker_off_black"
+        android:id="@+id/bt_locaisOcupados"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:background="#5fb0c9" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/icon_user"
+        android:id="@+id/bt_user"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:background="#5fb0c9" />
+
 
 </RelativeLayout>

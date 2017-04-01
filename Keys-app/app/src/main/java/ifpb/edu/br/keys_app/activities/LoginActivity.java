@@ -14,7 +14,7 @@ import android.widget.EditText;
 import ifpb.edu.br.keys_app.R;
 
 public class LoginActivity extends AppCompatActivity {
-    EditText matricula, senha;
+    EditText matricula, nome;
     Button login;
     ProgressDialog progress;
 
@@ -24,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.login);
 
         matricula = (EditText) findViewById(R.id.et_matricula);
-        senha = (EditText) findViewById(R.id.et_senha);
+        nome = (EditText) findViewById(R.id.et_nome);
         login = (Button) findViewById(R.id.bt_login);
 
         login.setOnClickListener(new View.OnClickListener() {
@@ -41,11 +41,10 @@ public class LoginActivity extends AppCompatActivity {
                     matricula.setError("Minimo 11 letras");
                 }
 
-                if (senha.getText().length() == 0){
-                    senha.setError("Campo vazio");
-                }else if (senha.getText().length() < 3){
-                    senha.setError("Minímo 3 caracteres");
+                if(matricula.getText().length() == 0){
+                    matricula.setError("Campo vazio");
                 }
+
 
                 progress.dismiss();
 
