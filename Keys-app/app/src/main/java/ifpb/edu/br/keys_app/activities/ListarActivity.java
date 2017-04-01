@@ -1,7 +1,9 @@
 package ifpb.edu.br.keys_app.activities;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.Image;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -45,13 +47,13 @@ public class ListarActivity extends AppCompatActivity {
         bt_userInfo = (ImageButton) findViewById(R.id.bt_userInfo);
         lvSines = (ListView) findViewById(R.id.lv_locais);
         sines = new ArrayList<Sine>();
-        adapter = new ArrayAdapter<Sine>(this, android.R.layout.simple_list_item_1, sines);
+        adapter = new ArrayAdapter<Sine>(this, android.R.layout.simple_list_item_activated_1, sines);
         lvSines.setAdapter(adapter);
 
         bt_back .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                voltar();
+                onBackPressed();
             }
         });
 
@@ -102,9 +104,19 @@ public class ListarActivity extends AppCompatActivity {
     }
 
 
-    public void voltar() {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-        finish();
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setTitle("Sair")
+                .setMessage("Tem certeza que quer sair?")
+                .setNegativeButton(android.R.string.no, null)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        Intent intent = new Intent(ListarActivity.this, LoginActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                }).create().show();
     }
 }

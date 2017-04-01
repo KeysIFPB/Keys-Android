@@ -17,12 +17,12 @@ public interface APIServices {
     Call<List<Sine>> getSinesComRaio();
 
 /*    @GET(" ")
-    Call<List<Sine>> getSinesBR();
+    Call<List<Sine>> getSinesBR();*/
 
     @GET("cod/{cod}")
     Call<List<Sine>> getSinePorCod(@Path("cod") String cod);
 
-    @GET("emprego/latitude/{lat}/longitude/{long}/raio/{raio}")
+   /* @GET("emprego/latitude/{lat}/longitude/{long}/raio/{raio}")
     Call<List<Sine>> getSinesGPS(
             @Path("lat") Double lat,
             @Path("long") Double longitude,

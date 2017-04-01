@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 progress.dismiss();
 
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                Intent intent = new Intent(LoginActivity.this, ListarActivity.class);
                 startActivity(intent);
                 finish();
 

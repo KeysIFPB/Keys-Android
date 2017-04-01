@@ -41,7 +41,7 @@ public class LivresActivity extends AppCompatActivity {
     }
 
     public void voltar() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, ListarActivity.class);
         startActivity(intent);
         finish();
     }
