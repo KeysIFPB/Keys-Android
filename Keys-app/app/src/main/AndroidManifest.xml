@@ -33,11 +33,6 @@
             android:name=".activities.LivresActivity"
             android:label="@string/title_activity_livres"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".activities.LocaisActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_locais"
-            android:theme="@style/FullscreenTheme" />
         <activity android:name=".activities.ListarActivity"></activity>
     </application>
 

@@ -1,7 +1,11 @@
 package ifpb.edu.br.keys_app.activities;
 
+import android.content.Intent;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import java.util.List;
@@ -9,17 +13,98 @@ import java.util.List;
 import ifpb.edu.br.keys_app.R;
 import ifpb.edu.br.keys_app.models.Local;
 
-public class ListarActivity extends AppCompatActivity {
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
-    List<Local> locais;
-    ListView lv_locais;
+import java.util.ArrayList;
+import java.util.List;
+
+import ifpb.edu.br.keys_app.R;
+import ifpb.edu.br.keys_app.models.Sine;
+import ifpb.edu.br.keys_app.network.ServerConnection;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class ListarActivity extends AppCompatActivity {
+    ImageButton bt_back, bt_userInfo;
+    ListView lvSines;
+    ArrayAdapter<Sine> adapter;
+    List<Sine> sines;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar);
 
-        lv_locais = (ListView) findViewById(R.id.lv_locais);
+        bt_back = (ImageButton) findViewById(R.id.bt_back);
+        bt_userInfo = (ImageButton) findViewById(R.id.bt_userInfo);
+        lvSines = (ListView) findViewById(R.id.lv_locais);
+        sines = new ArrayList<Sine>();
+        adapter = new ArrayAdapter<Sine>(this, android.R.layout.simple_list_item_1, sines);
+        lvSines.setAdapter(adapter);
 
+        bt_back .setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                voltar();
+            }
+        });
+
+        listarSinesComRaio();
+    }
+
+
+    public void listarSinesComRaio(){
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                Call<List<Sine>> call = ServerConnection.getInstance().getService().getSinesComRaio();
+
+                Log.i(this.getClass().getName(), "Calling list");
+
+                call.enqueue(new Callback<List<Sine>>() {
+                    @Override
+                    public void onResponse(Call<List<Sine>> call, Response<List<Sine>> response) {
+
+                        try{
+
+                            if(response.isSuccessful()){
+                                List<Sine> sinesResponse = response.body();
+
+                                sines.addAll(sinesResponse);
+                                adapter.notifyDataSetChanged();
+                            }
+                            else{
+                                Log.e(this.getClass().toString(), "Error on calling");
+                            }
+
+
+                        }
+                        catch (Exception e){
+                            Log.e(this.getClass().toString(), "Error on calling");
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<Sine>> call, Throwable t) {
+                        Log.e("onFailure", "Error");
+                    }
+                });
+            }
+        }).start();
+    }
+
+
+    public void voltar() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

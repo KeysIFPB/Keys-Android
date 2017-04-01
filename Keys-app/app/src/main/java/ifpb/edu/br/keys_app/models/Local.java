@@ -12,6 +12,7 @@ public class Local {
     private Time horaReserva;
     private Time horaDevolucao;
     private String nomeResponsavel;
+    private boolean situacao;
 
     private Local(String nome,Time horaReserva,Time horaDevolucao,String nomeResponsavel) {
         this.nome = nome;
@@ -40,13 +41,20 @@ public class Local {
     public void setHoraDevolucao(Time horaDevolucao) {
         this.horaDevolucao = horaDevolucao;
     }
-        public String getNomeResponsavel() {
+    public String getNomeResponsavel() {
         return nomeResponsavel;
     }
     public void setNomeResponsavel(String nomeResponsavel) {
         this.nomeResponsavel = nomeResponsavel;
     }
+    public boolean isSituacao() {
+        return situacao;
+    }
+    public void setSituacao(boolean situacao) {
+        this.situacao = situacao;
+    }
 //--------------------------------------------------------------------------------------------//
+
 
     @Override
     public String toString() {
@@ -55,8 +63,7 @@ public class Local {
                 ", horaReserva=" + horaReserva +
                 ", horaDevolucao=" + horaDevolucao +
                 ", nomeResponsavel='" + nomeResponsavel + '\'' +
+                ", situacao=" + situacao +
                 '}';
     }
-
-
 }

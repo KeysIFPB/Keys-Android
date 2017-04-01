@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         bt_locais .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, LocaisActivity.class);
+                Intent intent = new Intent(MainActivity.this, ListarActivity.class);
                 startActivity(intent);
                 finish();
 
