@@ -41,7 +41,7 @@ public class ProcurarActivity extends AppCompatActivity {
         bt_buscar = (Button) findViewById(R.id.bt_buscar);
         et_nome = (EditText) findViewById(R.id.et_nome);
         bt_back = (ImageButton) findViewById(R.id.bt_back);
-        bt_userInfo = (ImageButton) findViewById(R.id.bt_userInfo);
+        bt_userInfo = (ImageButton) findViewById(R.id.bt_user);
         lv_chaves = (ListView) findViewById(R.id.lv_chaves);
 
 

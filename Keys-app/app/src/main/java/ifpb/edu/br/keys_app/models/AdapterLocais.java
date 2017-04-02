@@ -49,11 +49,11 @@ public class AdapterLocais extends BaseAdapter {
 
         //pegando as referências das Views
         TextView nome = (TextView)
-                view.findViewById(R.id.lv_locais);
+                view.findViewById(R.id.lv_chaves);
         TextView descricao = (TextView)
-                view.findViewById(R.id.lv_locais);
+                view.findViewById(R.id.lv_chaves);
         ImageView imagem = (ImageView)
-                view.findViewById(R.id.lv_locais);
+                view.findViewById(R.id.lv_chaves);
 
         //populando as Views
         nome.setText("Teste titulo sine");

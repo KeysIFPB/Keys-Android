@@ -25,7 +25,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class ListarActivity extends AppCompatActivity {
-    ImageButton bt_back, bt_userInfo;
+    ImageButton bt_back, bt_userInfo, bt_procurar;
     ListView lv_chaves;
     ArrayAdapter<Chave> adapter;
     List<Chave> chaves;
@@ -36,12 +36,20 @@ public class ListarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar);
 
+        bt_procurar = (ImageButton) findViewById(R.id.bt_procurar);
         bt_back = (ImageButton) findViewById(R.id.bt_back);
-        bt_userInfo = (ImageButton) findViewById(R.id.bt_userInfo);
+        bt_userInfo = (ImageButton) findViewById(R.id.bt_user);
         lv_chaves = (ListView) findViewById(R.id.lv_chaves);
         chaves = new ArrayList<Chave>();
         adapter = new ArrayAdapter<Chave>(this, android.R.layout.simple_list_item_activated_1, chaves);
         lv_chaves.setAdapter(adapter);
+
+        bt_procurar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                procurar();
+            }
+        });
 
         bt_back .setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,5 +119,12 @@ public class ListarActivity extends AppCompatActivity {
                         finish();
                     }
                 }).create().show();
+    }
+
+    public void procurar() {
+        Intent intent = new Intent(ListarActivity.this, ProcurarActivity.class);
+        startActivity(intent);
+        finish();
+
     }
 }
