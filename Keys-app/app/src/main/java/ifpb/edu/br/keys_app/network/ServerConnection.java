@@ -4,12 +4,12 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * Created by rebeca on 27/10/2016.
+ * Created by Mateus on 28/03/2017.
  */
 
 public class ServerConnection {
     private static final String URL_BASE =
-            "http://mobile-aceite.tcu.gov.br/mapa-da-saude/rest/emprego/";
+            "127.0.0.1:8080/RestEasyApp";
 
 
     private static APIServices service;

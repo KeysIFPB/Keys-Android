@@ -18,7 +18,7 @@ import android.widget.ArrayAdapter;
 
 import java.util.ArrayList;
 
-import ifpb.edu.br.keys_app.models.Sine;
+import ifpb.edu.br.keys_app.models.Chave;
 import ifpb.edu.br.keys_app.network.ServerConnection;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -26,9 +26,9 @@ import retrofit2.Response;
 
 public class ListarActivity extends AppCompatActivity {
     ImageButton bt_back, bt_userInfo;
-    ListView lvSines;
-    ArrayAdapter<Sine> adapter;
-    List<Sine> sines;
+    ListView lv_chaves;
+    ArrayAdapter<Chave> adapter;
+    List<Chave> chaves;
 
 
     @Override
@@ -38,10 +38,10 @@ public class ListarActivity extends AppCompatActivity {
 
         bt_back = (ImageButton) findViewById(R.id.bt_back);
         bt_userInfo = (ImageButton) findViewById(R.id.bt_userInfo);
-        lvSines = (ListView) findViewById(R.id.lv_locais);
-        sines = new ArrayList<Sine>();
-        adapter = new ArrayAdapter<Sine>(this, android.R.layout.simple_list_item_activated_1, sines);
-        lvSines.setAdapter(adapter);
+        lv_chaves = (ListView) findViewById(R.id.lv_chaves);
+        chaves = new ArrayList<Chave>();
+        adapter = new ArrayAdapter<Chave>(this, android.R.layout.simple_list_item_activated_1, chaves);
+        lv_chaves.setAdapter(adapter);
 
         bt_back .setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,30 +50,30 @@ public class ListarActivity extends AppCompatActivity {
             }
         });
 
-        listarSinesComRaio();
+        listarChaves();
     }
 
 
-    public void listarSinesComRaio(){
+    public void listarChaves(){
 
         new Thread(new Runnable() {
             @Override
             public void run() {
 
-                Call<List<Sine>> call = ServerConnection.getInstance().getService().getSinesComRaio();
+                Call<List<Chave>> call = ServerConnection.getInstance().getService().getChaves();
 
                 Log.i(this.getClass().getName(), "Calling list");
 
-                call.enqueue(new Callback<List<Sine>>() {
+                call.enqueue(new Callback<List<Chave>>() {
                     @Override
-                    public void onResponse(Call<List<Sine>> call, Response<List<Sine>> response) {
+                    public void onResponse(Call<List<Chave>> call, Response<List<Chave>> response) {
 
                         try{
 
                             if(response.isSuccessful()){
-                                List<Sine> sinesResponse = response.body();
+                                List<Chave> chavesResponse = response.body();
 
-                                sines.addAll(sinesResponse);
+                                chaves.addAll(chavesResponse);
                                 adapter.notifyDataSetChanged();
                             }
                             else{
@@ -88,7 +88,7 @@ public class ListarActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onFailure(Call<List<Sine>> call, Throwable t) {
+                    public void onFailure(Call<List<Chave>> call, Throwable t) {
                         Log.e("onFailure", "Error");
                     }
                 });
