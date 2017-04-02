@@ -68,7 +68,7 @@ public class ListarActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                Call<List<Chave>> call = ServerConnection.getInstance().getService().getChaves();
+                Call<List<Chave>> call = ServerConnection.getInstance().getService().getAll();
 
                 Log.i(this.getClass().getName(), "Calling list");
 

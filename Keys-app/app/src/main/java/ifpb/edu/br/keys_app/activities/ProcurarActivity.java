@@ -64,14 +64,14 @@ public class ProcurarActivity extends AppCompatActivity {
     public void Procurar() {
         new Thread(new Runnable() {
 
-            String cod = et_nome.getText().toString();
+            String sala = et_nome.getText().toString();
 
             @Override
             public void run() {
 
-                ServerConnection.getInstance().getService().getChavesPorNome(nome);
+                ServerConnection.getInstance().getService().getChaveBySala(sala);
 
-                Call<List<Chave>> call = ServerConnection.getInstance().getService().getSinePorCod(cod);
+                Call<List<Chave>> call = ServerConnection.getInstance().getService().getChaveBySala(sala);
 
                 Log.i(this.getClass().getName(), "Calling Chave");
 
@@ -88,7 +88,7 @@ public class ProcurarActivity extends AppCompatActivity {
                                 tv_chaves.setText(chave.toString());
 
                             } else {
-                                Log.e(this.getClass().toString(), "Error on calling " + response.code() + " Cód: " + cod);
+                                Log.e(this.getClass().toString(), "Error on calling " + response.code() + " Sala " + sala);
                             }
                         } catch (Exception e) {
                             Log.e(this.getClass().toString(), e.getMessage().toString());

@@ -3,7 +3,6 @@ package ifpb.edu.br.keys_app.network;
 import java.util.List;
 
 import ifpb.edu.br.keys_app.models.Chave;
-import ifpb.edu.br.keys_app.models.Sine;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -15,15 +14,13 @@ import retrofit2.http.Path;
 public interface APIServices {
 
     @GET("/listar")
-    Call<List<Chave>> getChaves();
+    Call<List<Chave>> getAll();
 
-/*    @GET(" ")
-    Call<List<Sine>> getSinesBR();*/
 
-    /*@GET("cod/{cod}")
-    Call<List<Sine>> getSinePorCod(@Path("cod") String cod);
+    @GET("/listar/sala/{sala}")
+    Call<List<Chave>> getChaveBySala(@Path("sala") String sala);
 
-    @GET("emprego/latitude/{lat}/longitude/{long}/raio/{raio}")
+    /*@GET("emprego/latitude/{lat}/longitude/{long}/raio/{raio}")
     Call<List<Sine>> getSinesGPS(
             @Path("lat") Double lat,
             @Path("long") Double longitude,
