@@ -24,7 +24,11 @@
             android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activities.ListarActivity" />
-        <activity android:name=".activities.ProcurarActivity"></activity>
+        <activity android:name=".activities.ProcurarActivity" />
+        <activity
+            android:name=".activities.CadastroActivity"
+            android:label="@string/title_activity_cadastro"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

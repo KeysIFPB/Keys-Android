@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="ifpb.edu.br.keys_app.activities.CadastroActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_bar_height"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:background="#5fb0c9">
+
+    </android.support.design.widget.AppBarLayout>
+
+    <TextView
+        android:text="CADASTRO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textStyle="normal|bold"
+        android:textColor="@color/branco"
+        android:textAlignment="viewStart"
+        android:layout_alignBottom="@+id/app_bar"
+        android:layout_alignParentStart="true" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@id/app_bar"
+        app:layout_anchorGravity="bottom|end"
+        app:srcCompat="@drawable/icon_user"
+        android:layout_weight="1"
+        android:layout_marginLeft="@dimen/fab_margin"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:layout_alignTop="@+id/textView"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="40dp"
+        app:backgroundTint="#d67601" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/fab">
+
+
+        <TextView
+            android:text="Nome:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="16dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/et_nome"
+            android:layout_weight="1"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="21dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/et_matricula"
+            android:layout_below="@+id/textView4"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="11dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#d67601"
+            android:text="Cadastrar"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:id="@+id/bt_cadastro"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="22dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="36dp" />
+
+        <TextView
+            android:text="MATRICULA:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:id="@+id/textView4"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:layout_below="@+id/et_nome"
+            android:layout_alignStart="@+id/textView3" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

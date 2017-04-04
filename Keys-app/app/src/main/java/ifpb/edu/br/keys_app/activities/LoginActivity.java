@@ -15,7 +15,7 @@ import ifpb.edu.br.keys_app.R;
 
 public class LoginActivity extends AppCompatActivity {
     EditText matricula, nome;
-    Button login;
+    Button login, cadastrar;
     ProgressDialog progress;
 
     @Override
@@ -23,9 +23,12 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
-        matricula = (EditText) findViewById(R.id.et_matricula);
-        nome = (EditText) findViewById(R.id.et_nome);
+        matricula = (EditText) findViewById(R.id.et_matricula_login);
+        nome = (EditText) findViewById(R.id.et_nome_login);
         login = (Button) findViewById(R.id.bt_login);
+        cadastrar = (Button) findViewById(R.id.bt_cadastro);
+
+
 
         login.setOnClickListener(new View.OnClickListener() {
 
@@ -41,8 +44,8 @@ public class LoginActivity extends AppCompatActivity {
                     matricula.setError("Minimo 11 letras");
                 }
 
-                if(matricula.getText().length() == 0){
-                    matricula.setError("Campo vazio");
+                if(nome.getText().length() == 0){
+                    nome.setError("Campo vazio");
                 }
 
 

@@ -50,7 +50,7 @@
                     android:singleLine="true"
                     android:hint="  NOME"
                     android:inputType="text"
-                    android:id="@+id/et_nome" />
+                    android:id="@+id/et_nome_login" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -65,17 +65,9 @@
                     android:drawableLeft="@drawable/lock"
                     android:drawableTint="#000000"
                     android:hint="  MATRICULA"
-                    android:inputType="numberPassword"
-                    android:id="@+id/et_matricula" />
+                    android:inputType="number"
+                    android:id="@+id/et_matricula_login" />
             </android.support.design.widget.TextInputLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:paddingTop="5dp"
-                android:text="Os cadastros devem ser feitos na biblioteca por questão de segurança!"
-                android:textAlignment="center" />
 
 
             <Button
@@ -88,6 +80,18 @@
                 android:textColor="#fff"
                 android:textSize="18sp"
                 android:id="@+id/bt_login" />
+
+            <Button
+                android:text="Cadastrar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="22dp"
+                android:id="@+id/button"
+                android:backgroundTint="#5fb0c9"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="10sp"
+                android:textAlignment="center" />
         </LinearLayout>
     </RelativeLayout>
 

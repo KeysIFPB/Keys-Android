@@ -20,7 +20,7 @@ public interface APIServices {
     @GET("/listar/sala/{sala}")
     Call<List<Chave>> getChaveBySala(@Path("sala") String sala);
 
-    /*@GET("emprego/latitude/{lat}/longitude/{long}/raio/{raio}")
+    /*@POST("/cadstrar")
     Call<List<Sine>> getSinesGPS(
             @Path("lat") Double lat,
             @Path("long") Double longitude,
