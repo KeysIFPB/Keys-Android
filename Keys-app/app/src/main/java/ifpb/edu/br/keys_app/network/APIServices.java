@@ -13,11 +13,11 @@ import retrofit2.http.Path;
 
 public interface APIServices {
 
-    @GET("/listar")
+    @GET("chave/listar")
     Call<List<Chave>> getAll();
 
 
-    @GET("/listar/sala/{sala}")
+    @GET("chave/listar/sala/{sala}")
     Call<List<Chave>> getChaveBySala(@Path("sala") String sala);
 
     /*@POST("/cadstrar")

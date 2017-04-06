@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ServerConnection {
     private static final String URL_BASE =
-            "127.0.0.1:8080/RestEasyApp";
+            "http://192.168.0.108:8080/RestEasyApp/";
 
 
     private static APIServices service;
