@@ -16,7 +16,7 @@ import ifpb.edu.br.keys_app.R;
 public class LoginActivity extends AppCompatActivity {
     EditText matricula, nome;
     Button login, cadastrar;
-    ProgressDialog progress;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,14 +34,13 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                progress = new ProgressDialog(LoginActivity.this);
-                progress.setTitle("enviando...");
-                progress.show();
 
                 if(matricula.getText().length() == 0){
                     matricula.setError("Campo vazio");
                 }else if (matricula.getText().length() < 11){
                     matricula.setError("Minimo 11 letras");
+                } else {
+                    ok();
                 }
 
                 if(nome.getText().length() == 0){
@@ -49,18 +48,32 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
 
-                progress.dismiss();
+                // aqui acho que fica a parte de verificar se ta cadastrado
+            }
 
-                Intent intent = new Intent(LoginActivity.this, ListarActivity.class);
+
+
+        });
+
+        cadastrar.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(LoginActivity.this, CadastroActivity.class);
                 startActivity(intent);
                 finish();
 
 
-
-                // aqui acho que fica a parte de verificar se ta cadastrado
             }
 
         });
+    }
+
+    public void ok (){
+        Intent intent = new Intent(LoginActivity.this, ListarActivity.class);
+        startActivity(intent);
+        finish();
     }
 
 

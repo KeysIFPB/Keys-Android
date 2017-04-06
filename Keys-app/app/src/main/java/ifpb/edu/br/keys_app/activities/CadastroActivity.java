@@ -44,21 +44,35 @@ public class CadastroActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(et_matricula.getText().length() == 0){
-                    et_matricula.setError("Campo vazio");
-                }else if (et_matricula.getText().length() < 11){
-                    et_matricula.setError("Minimo 11 letras");
+
+
+                if (et_matricula.getText().length() > 10 && et_nome.getText().length() > 4  ){
+                    // if (et_matricula.getText().length() < 11){
+                      //   if(et_nome.getText().length() != 0){
+
+                             Intent intent = new Intent(CadastroActivity.this, ListarActivity.class);
+                             startActivity(intent);
+                             finish();
+
+                      //   }else {
+                     //        et_nome.setError("Campo vazio");
+                     //    }
+                    // }else{
+                    //     et_matricula.setError("Matricula inválida");
+                    // }
+
+               }else{
+                    Snackbar.make(v, "Dados incorretos, verifique os campos", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
                 }
 
-                if(et_nome.getText().length() == 0){
-                    et_nome.setError("Campo vazio");
-                }
+
 
                 // aqui acho que fica a parte de verificar se ta cadastrado
 
-                Intent intent = new Intent(CadastroActivity.this, ListarActivity.class);
-                startActivity(intent);
-                finish();
+              //  Intent intent = new Intent(CadastroActivity.this, ListarActivity.class);
+              //  startActivity(intent);
+              //  finish();
 
             }
         });
