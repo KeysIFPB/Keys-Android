@@ -16,6 +16,10 @@ import ifpb.edu.br.keys_app.R;
 public class LoginActivity extends AppCompatActivity {
     EditText matricula, nome;
     Button login, cadastrar;
+    String matri, name;
+
+
+
 
 
     @Override
@@ -25,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
 
         matricula = (EditText) findViewById(R.id.et_matricula_login);
         nome = (EditText) findViewById(R.id.et_nome_login);
+
         login = (Button) findViewById(R.id.bt_login);
         cadastrar = (Button) findViewById(R.id.bt_cadastro);
 
@@ -40,12 +45,16 @@ public class LoginActivity extends AppCompatActivity {
                 }else if (matricula.getText().length() < 11){
                     matricula.setError("Minimo 11 letras");
                 } else {
+                    matri = matricula.getText().toString();
+                    name = nome.getText().toString();
                     ok();
                 }
 
                 if(nome.getText().length() == 0){
                     nome.setError("Campo vazio");
                 }
+
+
 
 
                 // aqui acho que fica a parte de verificar se ta cadastrado
@@ -72,8 +81,9 @@ public class LoginActivity extends AppCompatActivity {
 
     public void ok (){
         Intent intent = new Intent(LoginActivity.this, ListarActivity.class);
+        intent.putExtra("nome", name);
+        intent.putExtra("matricula", matri);
         startActivity(intent);
-        finish();
     }
 
 

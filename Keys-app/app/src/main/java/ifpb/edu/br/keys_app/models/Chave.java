@@ -35,10 +35,7 @@ public class Chave {
 
     @Override
     public String toString() {
-        return "Chave{" +
-                "id=" + id +
-                ", sala='" + sala + '\'' +
-                ", situacao=" + situacao +
-                '}';
+        return "Sala: " + sala + '\'' +
+                "Situação=" + situacao;
     }
 }

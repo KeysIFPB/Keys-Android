@@ -40,9 +40,6 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario{" +
-                ", nome='" + nome + '\'' +
-                ", matricula='" + matricula + '\'' +
-                '}';
+        return "" + nome +  ", matricula='" + matricula ;
     }
 }

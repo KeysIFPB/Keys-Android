@@ -15,6 +15,7 @@ import ifpb.edu.br.keys_app.R;
 
 import android.util.Log;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -30,19 +31,33 @@ public class ListarActivity extends AppCompatActivity {
     ArrayAdapter<Chave> adapter;
     List<Chave> chaves;
 
+    //String matricula = bundle.getString("matricula"), nome = bundle.getString("nome");
+    String matricula, nome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar);
 
+        Bundle bundle = getIntent().getExtras();
+        matricula = bundle.getString("matricula");
+        nome = bundle.getString("nome");
+
         bt_procurar = (ImageButton) findViewById(R.id.bt_procurar);
         bt_back = (ImageButton) findViewById(R.id.bt_back);
         bt_userInfo = (ImageButton) findViewById(R.id.bt_user);
         lv_chaves = (ListView) findViewById(R.id.lv_chaves);
+        lv_chaves.setAdapter(adapter);
+
         chaves = new ArrayList<Chave>();
         adapter = new ArrayAdapter<Chave>(this, android.R.layout.simple_list_item_activated_1, chaves);
-        lv_chaves.setAdapter(adapter);
+
+        bt_userInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), nome + ", " + matricula ,Toast.LENGTH_SHORT).show();
+            }
+        });
 
         bt_procurar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,8 +138,9 @@ public class ListarActivity extends AppCompatActivity {
 
     public void procurar() {
         Intent intent = new Intent(ListarActivity.this, ProcurarActivity.class);
+        intent.putExtra("nome", nome);
+        intent.putExtra("matricula", matricula);
         startActivity(intent);
-        finish();
 
     }
 }
