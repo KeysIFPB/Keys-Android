@@ -39,9 +39,9 @@ public class ListarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar);
 
-       // Bundle bundle = getIntent().getExtras();
-//        matricula = bundle.getString("matricula");
-       // nome = bundle.getString("nome");
+        Bundle bundle = getIntent().getExtras();
+        matricula = bundle.getString("matricula");
+        nome = bundle.getString("nome");
 
         bt_procurar = (ImageButton) findViewById(R.id.bt_procurar);
         bt_back = (ImageButton) findViewById(R.id.bt_back);

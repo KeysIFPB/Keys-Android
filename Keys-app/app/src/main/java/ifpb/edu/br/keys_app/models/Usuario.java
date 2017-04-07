@@ -6,18 +6,16 @@ package ifpb.edu.br.keys_app.models;
 
 public class Usuario {
 
-    private Integer id;
+ //   private Integer id;
     private String nome;
     private String matricula;
 
-
-    public Integer getId() {
-        return id;
+    public Usuario(String nome, String matricula) {
+   //     this.id = id;
+        this.nome = nome;
+        this.matricula = matricula;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getNome() {
         return nome;

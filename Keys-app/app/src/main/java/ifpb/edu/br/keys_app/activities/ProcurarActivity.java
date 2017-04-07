@@ -28,12 +28,14 @@ import retrofit2.Response;
 
 public class ProcurarActivity extends AppCompatActivity {
 
-    TextView tv_chaves;
+    TextView tv_busca;
     EditText et_nome;
     Button bt_buscar;
     ImageButton bt_back, bt_userInfo;
     ListView lv_chaves;
     List<Chave> chaves;
+
+
     ArrayAdapter<Chave> adapter;
     LoginActivity loginDados = new LoginActivity();
     String matricula, nome;
@@ -45,17 +47,20 @@ public class ProcurarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_procurar);
 
+        tv_busca = (TextView) findViewById(R.id.tv_busca);
         bt_buscar = (Button) findViewById(R.id.bt_buscar);
         et_nome = (EditText) findViewById(R.id.et_nome);
         bt_back = (ImageButton) findViewById(R.id.bt_back);
         bt_userInfo = (ImageButton) findViewById(R.id.bt_user);
         lv_chaves = (ListView) findViewById(R.id.lv_chaves);
 
+
         Bundle bundle = getIntent().getExtras();
         matricula = bundle.getString("matricula");
         nome = bundle.getString("nome");
 
         chaves = new ArrayList<Chave>();
+
         adapter = new ArrayAdapter<Chave>(this, android.R.layout.simple_list_item_activated_1, chaves);
         lv_chaves.setAdapter(adapter);
 
@@ -147,8 +152,10 @@ public class ProcurarActivity extends AppCompatActivity {
                             if(response.isSuccessful()){
                                 List<Chave> chavesRespon = response.body();
 
-                                chaves.addAll(chavesRespon);
-                                adapter.notifyDataSetChanged();
+                                Chave chaves = chavesRespon.get(0);
+                                tv_busca.setText(chaves.toString());
+                                //chaves.addAll(chavesRespon);
+                                //adapter.notifyDataSetChanged();
                             }
                             else{
                                 Log.e(this.getClass().toString(), "Error on calling");

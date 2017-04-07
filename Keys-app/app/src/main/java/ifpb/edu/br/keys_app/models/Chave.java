@@ -33,9 +33,17 @@ public class Chave {
         this.situacao = situacao;
     }
 
-    @Override
+
+
     public String toString() {
+        String situacaoReserva;
+        if(situacao == true){
+            situacaoReserva="Livre";
+        }else{
+            situacaoReserva="Ocupada";
+        }
+
         return "Sala: " + sala + '\'' +
-                "Situação=" + situacao;
+                "Situação=" + situacaoReserva;
     }
 }
