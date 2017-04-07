@@ -57,6 +57,7 @@ public class ProcurarActivity extends AppCompatActivity {
 
         chaves = new ArrayList<Chave>();
         adapter = new ArrayAdapter<Chave>(this, android.R.layout.simple_list_item_activated_1, chaves);
+        lv_chaves.setAdapter(adapter);
 
         bt_userInfo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,8 +82,8 @@ public class ProcurarActivity extends AppCompatActivity {
             }
         });
 
-
     }
+
     public void listarChaves(){
 
         new Thread(new Runnable() {

@@ -47,10 +47,11 @@ public class ListarActivity extends AppCompatActivity {
         bt_back = (ImageButton) findViewById(R.id.bt_back);
         bt_userInfo = (ImageButton) findViewById(R.id.bt_user);
         lv_chaves = (ListView) findViewById(R.id.lv_chaves);
-        lv_chaves.setAdapter(adapter);
+
 
         chaves = new ArrayList<Chave>();
         adapter = new ArrayAdapter<Chave>(this, android.R.layout.simple_list_item_activated_1, chaves);
+        lv_chaves.setAdapter(adapter);
 
         bt_userInfo.setOnClickListener(new View.OnClickListener() {
             @Override
