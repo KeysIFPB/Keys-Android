@@ -72,7 +72,7 @@ public class ProcurarActivity extends AppCompatActivity {
             }
         });
 
-       // listarChaves();
+        listarChaves();
 
         bt_buscar.setOnClickListener(new View.OnClickListener() {
             @Override
