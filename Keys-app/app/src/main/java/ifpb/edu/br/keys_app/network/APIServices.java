@@ -25,9 +25,11 @@ public interface APIServices {
     Call<List<Chave>> getChaveBySala(@Path("sala") String sala);
 
 
-    @POST("chave/cadastrar")
+    @POST("usuario/cadastrar")
     Call<Usuario> insert(@Body Usuario usuario);
 
+    @POST("usuario/login")
+    Call<Usuario> login(@Body Usuario usuarioRecebido);
 
 
 
