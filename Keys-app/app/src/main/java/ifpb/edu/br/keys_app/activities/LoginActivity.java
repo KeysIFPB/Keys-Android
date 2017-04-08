@@ -72,6 +72,10 @@ public class LoginActivity extends AppCompatActivity {
                                         if (response.isSuccessful()) {
                                             Toast.makeText(getApplicationContext(), "Bem vindo, " + nome.getText().toString() + "!" ,Toast.LENGTH_SHORT).show();
                                             // depois de logado, vai pra proxima activity levando dados do user
+
+                                            matri = matricula.getText().toString();
+                                            name = nome.getText().toString();
+
                                             Intent intent = new Intent(LoginActivity.this, ListarActivity.class);
                                             intent.putExtra("nome", name);
                                             intent.putExtra("matricula", matri);
