@@ -70,7 +70,7 @@ public class LoginActivity extends AppCompatActivity {
                                     try {
 
                                         if (response.isSuccessful()) {
-                                            Toast.makeText(getApplicationContext(), "Bem vindo, " + name + "!" ,Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(getApplicationContext(), "Bem vindo, " + nome.getText().toString() + "!" ,Toast.LENGTH_SHORT).show();
                                             // depois de logado, vai pra proxima activity levando dados do user
                                             Intent intent = new Intent(LoginActivity.this, ListarActivity.class);
                                             intent.putExtra("nome", name);
