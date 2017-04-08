@@ -25,10 +25,6 @@ public class LoginActivity extends AppCompatActivity {
     Button login, cadastrar;
     String matri, name;
 
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

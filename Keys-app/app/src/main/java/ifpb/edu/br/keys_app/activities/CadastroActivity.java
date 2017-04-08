@@ -77,14 +77,18 @@ public class CadastroActivity extends AppCompatActivity {
 
                                             Toast.makeText(getApplicationContext(), "Usuário " + response.body().getNome() + " cadastrado!"
                                                     ,Toast.LENGTH_SHORT).show();
+
+                                            Intent intent = new Intent(CadastroActivity.this, ListarActivity.class);
+                                            intent.putExtra("nome", response.body().getNome());
+                                            intent.putExtra("matricula", response.body().getMatricula());
+                                            startActivity(intent);
+
                                         } else {
                                             Log.e(this.getClass().toString(), "Error on calling " + response.code() );
                                         }
                                     } catch (Exception e) {
                                         Log.e(this.getClass().toString(), e.getMessage().toString());
                                     }
-
-
 
                                 }
 
@@ -97,19 +101,17 @@ public class CadastroActivity extends AppCompatActivity {
                         }
                 }).start();
 
-                   Intent intent = new Intent(CadastroActivity.this, ListarActivity.class);
-                   startActivity(intent);
-                   finish();
+            /*  Intent intent = new Intent(CadastroActivity.this, ListarActivity.class);
+                intent.putExtra("nome", response.body().getNome());
+                intent.putExtra("matricula", response.body().getMatricula());
+                startActivity(intent);
 
-
-
+                */
 
                 }else{
                     Snackbar.make(v, "Dados incorretos, verifique os campos", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                 }
-
-
 
                 // aqui acho que fica a parte de verificar se ta cadastrado
 
@@ -119,11 +121,6 @@ public class CadastroActivity extends AppCompatActivity {
 
             }
         });
-
-
-}
-
-
-
+    }
 
 }

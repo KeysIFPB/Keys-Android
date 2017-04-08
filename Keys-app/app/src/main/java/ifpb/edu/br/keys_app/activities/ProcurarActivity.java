@@ -179,8 +179,9 @@ public class ProcurarActivity extends AppCompatActivity {
 
     public void voltar() {
         Intent intent = new Intent(ProcurarActivity.this, ListarActivity.class);
+        intent.putExtra("nome", nome);
+        intent.putExtra("matricula", matricula);
         startActivity(intent);
-        finish();
     }
 
 }

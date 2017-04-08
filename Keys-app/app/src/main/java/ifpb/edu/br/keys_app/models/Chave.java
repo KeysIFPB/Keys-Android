@@ -43,7 +43,7 @@ public class Chave {
             situacaoReserva="Ocupada";
         }
 
-        return "Sala: " + sala + '\'' + '\'' +
-                "Situação=" + situacaoReserva;
+        return "Sala: " + sala +
+                "\n\nSituação:" + situacaoReserva;
     }
 }
