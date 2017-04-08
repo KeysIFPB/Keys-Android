@@ -31,7 +31,7 @@ public class ListarActivity extends AppCompatActivity {
     ArrayAdapter<Chave> adapter;
     List<Chave> chaves;
 
-    //String matricula = bundle.getString("matricula"), nome = bundle.getString("nome");
+   // Bundle bundle = getIntent().getExtras();
     String matricula, nome;
 
     @Override
@@ -142,6 +142,7 @@ public class ListarActivity extends AppCompatActivity {
         intent.putExtra("nome", nome);
         intent.putExtra("matricula", matricula);
         startActivity(intent);
+
 
     }
 }

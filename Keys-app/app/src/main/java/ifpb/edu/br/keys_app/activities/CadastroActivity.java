@@ -71,8 +71,20 @@ public class CadastroActivity extends AppCompatActivity {
                             call.enqueue(new Callback<Usuario>() {
                                 @Override
                                 public void onResponse(Call<Usuario> call, Response<Usuario> response) {
-                                    Toast.makeText(getApplicationContext(), "Usuário " + response.body().getNome() + " cadastrado!"
-                                            ,Toast.LENGTH_SHORT).show();
+                                    try {
+
+                                        if (response.isSuccessful()) {
+
+                                            Toast.makeText(getApplicationContext(), "Usuário " + response.body().getNome() + " cadastrado!"
+                                                    ,Toast.LENGTH_SHORT).show();
+                                        } else {
+                                            Log.e(this.getClass().toString(), "Error on calling " + response.code() );
+                                        }
+                                    } catch (Exception e) {
+                                        Log.e(this.getClass().toString(), e.getMessage().toString());
+                                    }
+
+
 
                                 }
 

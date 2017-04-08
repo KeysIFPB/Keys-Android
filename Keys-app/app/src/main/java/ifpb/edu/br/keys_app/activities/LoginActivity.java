@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import ifpb.edu.br.keys_app.R;
 
@@ -84,6 +85,7 @@ public class LoginActivity extends AppCompatActivity {
         intent.putExtra("nome", name);
         intent.putExtra("matricula", matri);
         startActivity(intent);
+        Toast.makeText(getApplicationContext(), "Bem vindo, " + name + "!" ,Toast.LENGTH_SHORT).show();
     }
 
 

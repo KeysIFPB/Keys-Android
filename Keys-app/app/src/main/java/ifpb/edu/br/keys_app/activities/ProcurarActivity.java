@@ -74,7 +74,7 @@ public class ProcurarActivity extends AppCompatActivity {
         bt_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+                voltar();
             }
         });
 
@@ -176,9 +176,9 @@ public class ProcurarActivity extends AppCompatActivity {
             }
         }).start();
     }
-    @Override
-    public void onBackPressed() {
-        Intent intent = new Intent(this, ListarActivity.class);
+
+    public void voltar() {
+        Intent intent = new Intent(ProcurarActivity.this, ListarActivity.class);
         startActivity(intent);
         finish();
     }
