@@ -27,7 +27,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:fontFamily="sans-serif-smallcaps"
         android:textStyle="normal|bold"
-        android:textColor="@color/branco"
+        android:textColor="#d67601"
         android:textAlignment="viewStart"
         android:layout_alignBottom="@+id/app_bar"
         android:layout_alignParentStart="true" />

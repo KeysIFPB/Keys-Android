@@ -58,7 +58,7 @@ public class CadastroActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (et_matricula.getText().length() > 10 && et_nome.getText().length() > 4  ){
+                if (et_matricula.getText().length() > 10 && et_matricula.getText().length() < 13 && et_nome.getText().length() > 4  ){
 
                     new Thread(new Runnable() {
 
@@ -109,7 +109,9 @@ public class CadastroActivity extends AppCompatActivity {
                 */
 
                 }else{
-                    Snackbar.make(v, "Dados incorretos, verifique os campos", Snackbar.LENGTH_LONG)
+                    et_matricula.setError("Matricula incorreta");
+                    et_nome.setError("Nome insuficiente");
+                    Snackbar.make(v, "verifique os campos", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                 }
 
