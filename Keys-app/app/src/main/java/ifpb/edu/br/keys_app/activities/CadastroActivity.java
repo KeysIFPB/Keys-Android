@@ -55,8 +55,8 @@ public class CadastroActivity extends AppCompatActivity {
 
                 if (et_matricula.getText().length() > 10 && et_matricula.getText().length() < 13 && et_nome.getText().length() > 4  ){
 
-                    String nome, matricula;
-                    nome = et_nome.getText().toString(); matricula = et_matricula.getText().toString();
+                    final String nome = et_nome.getText().toString();
+                    final String matricula = et_matricula.getText().toString();
 
                     final Usuario usuario = new Usuario(nome, matricula);
 
