@@ -39,11 +39,6 @@ public class CadastroActivity extends AppCompatActivity {
         et_matricula = (EditText) findViewById(R.id.et_matricula);
         bt_cadastro = (Button) findViewById(R.id.bt_cadastro);
 
-        final Usuario usuario = new Usuario(
-                et_nome.getText().toString(),
-                et_matricula.getText().toString()
-        );
-
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -59,6 +54,11 @@ public class CadastroActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if (et_matricula.getText().length() > 10 && et_matricula.getText().length() < 13 && et_nome.getText().length() > 4  ){
+
+                    String nome, matricula;
+                    nome = et_nome.getText().toString(); matricula = et_matricula.getText().toString();
+
+                    final Usuario usuario = new Usuario(nome, matricula);
 
                     new Thread(new Runnable() {
 
@@ -79,8 +79,8 @@ public class CadastroActivity extends AppCompatActivity {
                                                     ,Toast.LENGTH_SHORT).show();
 
                                             Intent intent = new Intent(CadastroActivity.this, ListarActivity.class);
-                                            intent.putExtra("nome", response.body().getNome());
-                                            intent.putExtra("matricula", response.body().getMatricula());
+                                            intent.putExtra("nome", nome);
+                                            intent.putExtra("matricula", matricula);
                                             startActivity(intent);
 
                                         } else {
